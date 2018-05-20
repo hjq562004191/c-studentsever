@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+	char str[100];
+	gets(str);
+	char t[100];
+	gets(t);
+	char tc[100];
+	gets(tc);
+	int m,n,p,i,j,k;
+	m = strlen(str);
+	n = strlen(t);
+	p = strlen(tc);
+	for(i = 0;i <= m-n;i++){
+		k = n;
+		int i1 = 0;
+		int i2 = i;
+		while(k--){
+			if(str[i2] == t[i1]){
+				i1++;
+				i2++;
+			}
+			if(i1 == n)
+			str[i] = '-';
+		}
+	}
+	for(i = 0;i< m;){
+		if(str[i] != '-'){ 
+		printf("%c",str[i]);
+		i++;
+		}
+		else
+		{
+			printf("%s",tc);
+			i += n;
+		}
+	}
+}
